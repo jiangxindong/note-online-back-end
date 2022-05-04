@@ -1,29 +1,52 @@
 {
-  "name": "test",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "note-online-back-end",
+  "version": "1.0.0",
+  "description": "",
   "dependencies": {
-    "debug": "^2.6.3",
-    "koa": "^2.13.4",
-    "koa-body": "^5.0.0",
-    "koa-bodyparser": "^4.3.0",
-    "koa-json": "^2.0.2",
-    "koa-logger": "^3.2.1",
-    "koa-onerror": "^4.2.0",
-    "koa-router": "^10.1.1",
-    "koa-static": "^5.0.0",
-    "koa2-cors": "^2.0.6",
+    "egg": "^2.35.0",
+    "egg-scripts": "^2.5.0",
+    "egg-sequelize": "^4.0.2",
+    "fs": "^0.0.1-security",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15",
-    "sequelize-cli": "^6.4.1"
-  }
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.19.0",
+    "egg-mock": "^3.19.2",
+    "eslint": "^4.18.1",
+    "eslint-config-egg": "^7.0.0",
+    "factory-girl": "^5.0.2",
+    "sequelize-cli": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "debug": "egg-bin debug",
+    "dev": "egg-bin dev",
+    "autod": "autod",
+    "lint": "eslint .",
+    "test": "egg-bin test",
+    "cov": "egg-bin cov",
+    "ci": "npm run lint && NODE_ENV=test npx sequelize db:migrate && npm run cov"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "eslintIgnore": [
+    "coverage",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "author": "",
+  "private": true
 }

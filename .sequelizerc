@@ -1,7 +1,10 @@
- const path = require('path');
- module.exports = {
-   'config': path.resolve('db', 'config/config.json'), //数据库连接配置文件
-   'models-path': path.resolve('db', 'models'),     //模型文件
-   'seeders-path': path.resolve('db', 'seeders'),   //种子文件
-   'migrations-path': path.resolve('db', 'migrations') //迁移文件
- }
+'use strict';
+
+const path = require('path');
+
+module.exports = {
+  config: path.join(__dirname, 'database/config.json'),
+  'migrations-path': path.join(__dirname, 'database/migrations'),
+  'seeders-path': path.join(__dirname, 'database/seeders'),
+  'models-path': path.join(__dirname, 'app/model'),
+};
