@@ -1,0 +1,7 @@
+{
+  "exclude": ["dist", "node_modules", "test"],
+  "baseUrl": ".",
+  "paths": {
+    "@": ["./app"]
+  }
+}
