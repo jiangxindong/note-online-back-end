@@ -1,0 +1,13 @@
+const { MESSAGE } = require('@/public/constant/error');
+const {
+  CustomError,
+  ResponseBody,
+} = require('@/public/constant/response_body');
+module.exports = {
+  formatResp(data, code, message) {
+    return new ResponseBody(data, code, message);
+  },
+  throwError(code, message, data) {
+    throw new CustomError(code, MESSAGE[code], data);
+  },
+};

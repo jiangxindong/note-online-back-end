@@ -9,10 +9,10 @@ module.exports = appInfo => {
     },
   };
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_{{keys}}';
+  config.keys = appInfo.name + '_199801030000';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
   // change to your own sequelize configurations
   config.sequelize = {
