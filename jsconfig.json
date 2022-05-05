@@ -1,7 +1,9 @@
 {
   "exclude": ["dist", "node_modules", "test"],
-  "baseUrl": ".",
-  "paths": {
-    "@": ["./app"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./app/*"]
+    }
   }
 }
