@@ -3,10 +3,10 @@ class ResponseBody {
   constructor(data, code, message) {
     this.data = data;
     this.code = code || CODE.SUCCESS;
-    this.message = message || MESSAGE;
+    this.message = message || MESSAGE[CODE.SUCCESS];
   }
 }
-class CustomError extends Error {
+class HttpException extends Error {
   constructor(code, message, data) {
     super();
     this.data = data;
@@ -16,5 +16,5 @@ class CustomError extends Error {
 }
 module.exports = {
   ResponseBody,
-  CustomError,
+  HttpException,
 };
