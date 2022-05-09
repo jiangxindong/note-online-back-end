@@ -20,7 +20,8 @@ class AuthService extends Service {
         {
           username,
         },
-        app.config.verifyToken.secret
+        app.config.verifyToken.secret,
+        { expiresIn: '60m' }
       );
       return ctx.formatResp(token);
     }
