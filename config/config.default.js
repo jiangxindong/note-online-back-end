@@ -27,6 +27,20 @@ module.exports = appInfo => {
     database: 'school',
     username: 'root',
     password: 'root',
+    timezone: '+08:00',
+    dialectOptions: {
+      // format date
+      dateStrings: true,
+      typeCast(field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string();
+        }
+        if (field.type === 'DATE') {
+          return field.string();
+        }
+        return next();
+      },
+    },
   };
 
   return config;
