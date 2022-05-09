@@ -12,7 +12,7 @@ module.exports = options =>
           ctx.app.jwt.verify(token, options.secret);
           await next();
         } catch (error) {
-          ctx.throwError(CODE.NO_TOKEN);
+          ctx.throwError(CODE.NO_TOKEN, error.message);
         }
       } else {
         ctx.throwError(CODE.NO_TOKEN);
