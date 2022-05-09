@@ -5,13 +5,7 @@
     "database": "school",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "timezone": "+08:00",
     "database2": "database_development"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
   }
 }
