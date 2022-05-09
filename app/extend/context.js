@@ -1,4 +1,3 @@
-const { MESSAGE } = require('@/public/constant/error');
 const {
   HttpException,
   ResponseBody,
@@ -8,6 +7,6 @@ module.exports = {
     return new ResponseBody(data, code, message);
   },
   throwError(code, message, data) {
-    throw new HttpException(code, MESSAGE[code], data);
+    throw new HttpException(code, message, data);
   },
 };

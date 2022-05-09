@@ -8,12 +8,12 @@ module.exports = () =>
       const {
         // status = 200,
         code = CODE.UNKNOWN_CODES,
-        message,
+        message = MESSAGE[code],
         data,
       } = error;
       ctx.body = {
         code,
-        message: MESSAGE[code] || message || 'Internal Server Error',
+        message: message || 'Internal Server Error',
         data,
       };
     }
