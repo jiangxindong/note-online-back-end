@@ -12,7 +12,11 @@ module.exports = options =>
           ctx.app.jwt.verify(token, options.secret);
           await next();
         } catch (error) {
-          ctx.throwError(CODE.NO_TOKEN, error.message);
+          if (error.name === 'TokenExpiredError') {
+            ctx.throwError(CODE.EXPIRED_TOKEN);
+          }
+          // other error
+          ctx.throwError(error.code || CODE.OTHER_ERROR, error.message);
         }
       } else {
         ctx.throwError(CODE.NO_TOKEN);
