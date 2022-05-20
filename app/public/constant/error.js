@@ -6,6 +6,8 @@ const CODE = {
   WRONG_PASSWORD: 400003,
   NO_TOKEN: 400004,
   EXPIRED_TOKEN: 400005,
+  NOT_EXISTED_ENTITY: 400006,
+  OTHER_ERROR: 500001,
 };
 const MESSAGE = {
   [CODE.SUCCESS]: 'success',
@@ -15,6 +17,8 @@ const MESSAGE = {
   [CODE.WRONG_PASSWORD]: 'wrong password',
   [CODE.NO_TOKEN]: 'no token',
   [CODE.EXPIRED_TOKEN]: 'expired token',
+  [CODE.NOT_EXISTED_ENTITY]: 'entity does not exist',
+  [CODE.OTHER_ERROR]: 'other error',
 };
 module.exports = {
   MESSAGE,
