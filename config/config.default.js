@@ -32,10 +32,7 @@ module.exports = appInfo => {
       // format date
       dateStrings: true,
       typeCast(field, next) {
-        if (field.type === 'DATETIME') {
-          return field.string();
-        }
-        if (field.type === 'DATE') {
+        if (field.type === 'DATETIME' || field.type === 'DATE') {
           return field.string();
         }
         return next();
